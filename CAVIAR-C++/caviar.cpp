@@ -25,7 +25,7 @@ int main( int argc, char *argv[]  ){
 	string outputFileName = "";
 	string geneMapFile = "";	
 
-	while ((oc = getopt(argc, argv, "vhl:o:z:g:r:c:f:")) != -1) {
+	while ((oc = getopt(argc, argv, "vhl:o:z:g:r:c:f:n:")) != -1) {
 		switch (oc) {
 			case 'v':
 				cout << "version 2.2:" << endl;
@@ -55,6 +55,9 @@ int main( int argc, char *argv[]  ){
 			case 'c':
 				totalCausalSNP = atoi(optarg);
 				break;
+			case 'n':
+				NCP = atof(optarg);
+				break;
 			case 'g':
 				gamma = atof(optarg);
 				break;
@@ -68,7 +71,12 @@ int main( int argc, char *argv[]  ){
 				break;
 		}
 	}
-	
+	// cout << "$$$$$$$$$$$$$$$" << endl; ////
+	// cout << zFile << endl; ////
+	// cout << ldFile << endl; ////
+	// cout << outputFileName << endl; ////
+	// cout << "$$$$$$$$$$$$$$$" << endl; ////
+
 	//program is running
 	cout << "@-------------------------------------------------------------@" << endl;
 	cout << "| CAVIAR!		| 	   v2.2         |  10/Apr/2018| " << endl;
